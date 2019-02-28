@@ -13,12 +13,12 @@ export class Contact extends React.Component {
             msg: 'Enter Message',
             name: 'Enter Name',
             email: 'Enter your Email Address'
-         }    
+         }
     }
 
     clearFields=()=> this.setState({name:'',msg:'', email:''});
 
-    sendMessage=()=> { 
+    sendMessage=()=> {
         Alert.alert(this.state.name,this.state.msg);
         this.props.navigation.goBack();
     };
@@ -30,23 +30,23 @@ export class Contact extends React.Component {
           <View style={styles.container}>
             <Header  navigate = {navigate} message = 'Press to Login' />
             <Text style={styles.heading}>Contact Us</Text>
-              
-            <TextInput 
-                style={styles.inputs} 
+
+            <TextInput
+                style={styles.inputs}
                 onChangeText={(text) => this.setState({name: text})}
                 value={this.state.name}
             />
 
-            <TextInput 
-                style={styles.multiInput} 
+            <TextInput
+                style={styles.multiInput}
                 onChangeText={(text) => this.setState({msg: text})}
                 value={this.state.msg}
                 multiline = {true}
                 numberOfLines = {4}
             />
 
-            <TextInput 
-                style={styles.inputs} 
+            <TextInput
+                style={styles.inputs}
                 onChangeText={(text) => this.setState({email: text})}
                 value={this.state.email}
             />
@@ -56,7 +56,7 @@ export class Contact extends React.Component {
                     Send Message
                 </Text>
             </TouchableHighlight>
-            
+
             <TouchableHighlight onPress={this.clearFields} underlayColor='#31e981'>
               <Text style = {styles.buttons}>
                 Reset Form
@@ -95,7 +95,3 @@ const styles = StyleSheet.create({
         fontSize: 16
     }
 });
-
-// AIzaSyARBH7hUN-LeulXuff2rNaArK0hkhohna4      --------------API Keys
-
-

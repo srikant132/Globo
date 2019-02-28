@@ -13,9 +13,9 @@ export class Blog extends React.Component {
     }
 
     componentDidMount(){
-        return fetch('https://public-api.wordpress.com/rest/v1.1/sites/globomatric.wordpress.com/posts')
+        return fetch('https://public-api.wordpress.com/rest/v1.1/sites/{use your website or wordpress site}/posts')
         .then((response) => response.json())
-        .then((responseJson) =>{ 
+        .then((responseJson) =>{
             this.setState({
                 blogLoaded: true,
                 blogList: Array.from(responseJson.posts)
@@ -23,7 +23,7 @@ export class Blog extends React.Component {
         })
         .catch((error) =>{
             console.error(error);
-        });    
+        });
     }
 
     chooseBlog = (blogID)=>{
@@ -44,21 +44,21 @@ export class Blog extends React.Component {
                                     title={item.title}
                                     imageSrc={item.featured_image}
                                     excerpt={item.excerpt}
-                                    choosePost={this.chooseBlog} 
+                                    choosePost={this.chooseBlog}
                                 />
-                            } 
+                            }
                         />
-                    
+
                     </View>
                 )}
                 { !this.state.blogLoaded && (
                     <View style={{ paddingTop: 30}}>
                         <Text> LOADING </Text>
                     </View>
-                )}         
+                )}
             </View>
-        );    
-    } 
+        );
+    }
 
 }
 

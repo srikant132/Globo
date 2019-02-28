@@ -11,19 +11,19 @@ export class Video extends React.Component {
         super(props);
         this.state = { listLoaded: false };
     }
-   
+
     componentDidMount(){
-        return fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&q=sense4study&type=video&key=AIzaSyARBH7hUN-LeulXuff2rNaArK0hkhohna4')
+        return fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&q=sense4study&type=video&key={ Use your own API key for Youtube }')
         .then((response) => response.json())
         .then((responseJson)=> {
             this.setState({
                 listLoaded: true,
                 videoList: Array.from(responseJson.items)
-            })    
+            })
         })
         .catch((error) =>{
             console.error(error);
-        });    
+        });
     }
 
     render() {
@@ -32,35 +32,35 @@ export class Video extends React.Component {
             <View>
                 { this.state.listLoaded && (
                     <View style={{ paddingTop: 30}}>
-                        <FlatList 
+                        <FlatList
                             data={ this.state.videoList }
-                            renderItem={({item}) => 
+                            renderItem={({item}) =>
                                 <TubeItem
-                                    navigate = {navigate} 
-                                    id={item.id.videoId} 
-                                    title={item.snippet.title} 
+                                    navigate = {navigate}
+                                    id={item.id.videoId}
+                                    title={item.snippet.title}
                                     imageSrc={item.snippet.thumbnails.high.url}
                                 />
                             }
                         />
                     </View>
                 )}
-                
+
                 { !this.state.listLoaded && (
                     <View style={{ paddingTop: 30}}>
                         <Text> LOADING </Text>
                     </View>
-                )}      
+                )}
 
-            </View>    
-        );    
-    } 
+            </View>
+        );
+    }
 
 }
 
 
 export class TubeItem extends React.Component {
-    
+
     onPress = () => {
         this.props.navigate('VideoDetailRT', {ytubeId: this.props.id} );
     };
@@ -82,4 +82,3 @@ export class TubeItem extends React.Component {
     }
 
 }
-
