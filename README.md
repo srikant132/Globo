@@ -18,3 +18,21 @@ This is a react native mobile app that allowed us to  get access to a learning f
 <img src="image/globo6.png" height="500" width="">
   </div>
   <hr/>
+<h2> Blog screen and QUIZ screen </h2>
+<div>
+<img src="image/globo7.png" height="500" width="">
+<img src="image/globo8.png" height="500" width="">
+  </div>
+  <hr/>
+  <h2> Quiz Result screen and Lesson page </h2>
+<div>
+<img src="image/globo9.png" height="500" width="">
+<img src="image/globo10.png" height="500" width="">
+  </div>
+  <hr/>
+  <h2> Lessoan Video screen and ContactUs page </h2>
+<div>
+<img src="image/globo11.png" height="500" width="">
+<img src="image/globo12.png" height="500" width="">
+  </div>
+  <hr/>
